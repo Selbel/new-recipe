@@ -1,0 +1,289 @@
+html {
+    background-color: rgba(122, 191, 191, .5);
+    margin-left:10%;
+    margin-right: 10%;
+    padding-top: 10%;
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Montserrat', sans-serif;
+}
+h1{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 40px;
+}
+h2{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+}
+h3{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+}
+nav a, nav span, menu li, .rightCol, .leftCol{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+}
+p, li, nav, input{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+body {
+    width: 100%;
+    margin: 0;
+    background-color: #f2f2f2;
+    display: grid;
+    grid-template-areas: 
+    "nav"
+    "header"
+    "details"
+    "ingredients"
+    "directions"
+    "sides"
+    "footer"
+}
+header {
+    margin-top: 5px;
+    padding-bottom: 20px;
+    background: #f2f2f2;
+    margin-left:0px;
+    margin-right:0px;
+    padding-top: 5%;
+}
+#main-nav {
+    width: 80%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    z-index:1;
+    text-transform: uppercase;
+    padding-bottom: 2px;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+#main-nav ul {
+    text-align: center;
+}
+#main-nav h2 {
+    visibility: hidden;
+    height: 1px;
+}
+#main-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color:orange;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+#main-nav li a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+    color:green;
+}
+[href="#home"] {
+    text-transform: capitalize;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    padding: 16px 16px;
+    background-color: #ffffff;
+}
+.item-home{
+    grid-column-start:1;
+    grid-column-end:2;
+}
+[href="#logo"] {
+    text-transform: capitalize;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    left: 25%;
+    padding: 16px 32px;
+    background-color: #EB5428;
+}
+#main-nav .item-logo{
+    grid-column-start:2;
+    grid-column-end:4;
+}
+[href="#avatar"] {
+    text-transform: capitalize;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 30px;
+    color: #EB5428;
+    background-color: #ffffff;
+    top: 0;
+    right: 0px;
+    padding: 16px 16px;
+    position: absolute;
+}
+#main-nav .item-avatar{
+    grid-column-start:4;
+    grid-column-end:5;
+}
+a:hover {
+    background-color:#EB5428;
+}
+input:hover {
+    background-color: #7abfbf;
+}
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+    z-index: 2;
+}
+label span {
+    background-color: red;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+label span:before, label span:after {
+    background: red;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+input {
+    display: none;
+}
+input:checked ~ ul {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: #EB5428;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;   
+}
+#media {
+    align-content: center ;
+}
+.item-search {
+    position: absolute;
+    left: 50px;
+    top:0px;
+    grid-area: search;
+}
+header h1 {
+ text-align: center;
+}
+#media div {
+    transform: rotate(-90deg);
+    display:inline;
+    padding: 15px;
+}
+.sides {
+    background-color: #7abfbf ;
+}
+body h2 {
+    text-align: center;
+}
+#details h2 {
+    text-align: center;
+}
+body h3  {
+    visibility: hidden;
+}
+footer{
+    align-items: center;
+}
+footer div {
+    transform: rotate(-90deg);
+    display:inline;
+}
+footer div.rightCol {
+    text-align: center;
+}
+footer div.leftCol {
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+@media (min-width: 768px) {
+    footer div.leftCol {
+        float: left;
+        width: 600px;
+    }
+    footer div.rightCol {
+        float: right;
+        transform: rotate(0deg);
+        display:inline;
+    }
+    nav{
+        display:inline;
+    }
+    #sides{
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #details{
+        text-align: center;
+    }
+    #info{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    header h1{
+        text-align: left;
+        top:10px;
+    }
+    .media{
+        position: absolute;
+        background-color: #f2f2f282;
+        width: 60%;
+        padding:30px;
+        padding-left: 110px; 
+    }
+}
+@media (min-width:1280px) {
+    #sides{
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    #details{
+        background-color: black;
+        color:#7abfbf;
+    }
+    .details{
+        display: inline-flex;
+    }
+    body .media{
+        transform:rotate(90deg);
+        left:-645px;
+        background-color: #ffffff;
+        top: 1128px;
+        border-color: #EB5428;
+        padding:50px ;
+        padding-right: 0px;
+        width:1700px;
+    }
+}
