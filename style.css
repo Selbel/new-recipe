@@ -18,7 +18,7 @@ h3{
     font-family: 'Bebas Neue', cursive;
     font-size: 25px;
 }
-nav a, nav span, menu li, .rightCol, .leftCol{
+nav a, nav span, menu li, .rightCol, #leftCol{
     font-family: 'Bebas Neue', cursive;
     font-size: 20px;
 }
@@ -221,7 +221,7 @@ footer div {
 footer div.rightCol {
     text-align: center;
 }
-footer div.leftCol {
+footer div #leftCol {
     top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -229,7 +229,7 @@ footer div.leftCol {
     position: absolute;
 }
 @media (min-width: 768px) {
-    footer div.leftCol {
+    footer div #leftCol {
         float: left;
         width: 600px;
     }
